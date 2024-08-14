@@ -1,0 +1,43 @@
+The $group stage in MongoDB's aggregation pipeline is used to group documents by a specified key or keys and to perform operations like summing, averaging, counting, or collecting values from the grouped documents.
+
+Common $group Operators:
+
+_id:
+Specifies the key to group by. It can be a single field, a combination of fields, or an expression.
+{ $group: { _id: "$field" } }
+
+$sum:
+Sums the values of the grouped documents for the specified field.
+{ $group: { _id: "$field", total: { $sum: "$anotherField" } } }
+
+
+$avg:
+Calculates the average of the specified field's values.
+{ $group: { _id: "$field", average: { $avg: "$anotherField" } } }
+
+$min:
+Returns the minimum value from the grouped documents for the specified field.
+{ $group: { _id: "$field", minValue: { $min: "$anotherField" } } }
+
+$max:
+Returns the maximum value from the grouped documents for the specified field.
+{ $group: { _id: "$field", maxValue: { $max: "$anotherField" } } }
+
+$push:
+Adds each value to an array of values in the grouped documents.
+{ $group: { _id: "$field", allValues: { $push: "$anotherField" } } }
+
+
+$addToSet:
+Adds unique values to an array (similar to $push, but without duplicates).
+{ $group: { _id: "$field", uniqueValues: { $addToSet: "$anotherField" } } }
+
+
+$first:
+Returns the first document’s value for the specified field within each group.
+{ $group: { _id: "$field", firstValue: { $first: "$anotherField" } } }
+
+
+$last:
+Returns the last document’s value for the specified field within each group.
+{ $group: { _id: "$field", lastValue: { $last: "$anotherField" } } }

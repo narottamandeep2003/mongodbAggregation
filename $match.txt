@@ -1,0 +1,69 @@
+The $match stage in MongoDB's aggregation pipeline is used to filter documents according to specified conditions. It is equivalent to the find operation, allowing you to narrow down the documents that pass through the pipeline.
+
+Common $match Operators:
+
+
+The $match stage in MongoDB's aggregation pipeline is used to filter documents according to specified conditions. It is equivalent to the find operation, allowing you to narrow down the documents that pass through the pipeline.
+
+Common $match Operators:
+
+Equality ($eq):
+Matches documents where the field is equal to a specified value.
+{ $match: { field: value } }
+
+Inequality ($ne):
+Matches documents where the field is not equal to a specified value.
+{ $match: { field: { $ne: value } } }
+
+Less Than ($lt):
+Matches documents where the field is less than a specified value.
+{ $match: { field: { $lt: value } } }
+
+Less Than or Equal ($lte):
+Matches documents where the field is less than or equal to a specified value.
+{ $match: { field: { $lte: value } } }
+
+Greater Than ($gt):
+Matches documents where the field is greater than a specified value.
+{ $match: { field: { $gt: value } } }
+
+Greater Than or Equal ($gte):
+Matches documents where the field is greater than or equal to a specified value.
+{ $match: { field: { $gte: value } } }
+
+In ($in):
+Matches documents where the field's value is in the specified array.
+{ $match: { field: { $in: [value1, value2, ...] } } }
+
+Not In ($nin):
+Matches documents where the field's value is not in the specified array.
+{ $match: { field: { $nin: [value1, value2, ...] } } }
+
+Logical AND ($and):
+Matches documents that satisfy all of the specified conditions.
+{ $match: { $and: [ { condition1 }, { condition2 }, ... ] } }
+
+Logical OR ($or):
+Matches documents that satisfy at least one of the specified conditions.
+{ $match: { $or: [ { condition1 }, { condition2 }, ... ] } }
+
+Logical NOT ($not):
+Matches documents that do not satisfy the specified condition.
+{ $match: { field: { $not: { condition } } } }
+
+Exists ($exists):
+Matches documents where the field exists or does not exist.
+{ $match: { field: { $exists: true } } }
+
+Regular Expression ($regex):
+Matches documents where the field's value matches a specified regular expression.
+{ $match: { field: { $regex: /pattern/, $options: 'i' } } }
+
+Type ($type):
+Matches documents where the field is of a specified type.
+{ $match: { field: { $type: "type" } } }
+
+
+Size ($size):
+Matches documents where the array field is of a specified size.
+{ $match: { arrayField: { $size: value } } }

@@ -1,0 +1,12 @@
+the $lookup stage in an aggregation pipeline is used to perform a join operation between two collections. This allows you to combine documents from different collections based on a common field. It's somewhat analogous to SQL joins.
+
+db.orders.aggregate([
+  {
+    $lookup: {
+      from: "products",        // The collection to join with
+      localField: "product_id", // Field from the input documents
+      foreignField: "product_id", // Field from the documents of the "from" collection
+      as: "product_details"    // The name of the new array field to add to the output documents
+    }
+  }
+])

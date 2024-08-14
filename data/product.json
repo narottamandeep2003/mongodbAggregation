@@ -1,0 +1,14 @@
+[
+  {
+    "product_id": 100,
+    "product_name": "Nokia"
+  },
+  {
+    "product_id": 200,
+    "product_name": "Apple"
+  },
+  {
+    "product_id": 300,
+    "product_name": "Samsung"
+  }
+]
